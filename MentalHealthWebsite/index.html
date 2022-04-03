@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Health Website</title>
+    <!-- Hey I put this next line in-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="#home" id="navbar__logo">Mental Health First</a>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span> <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="#home" class="navbar__links" id="home-page">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#about" class="navbar__links" id="about-page">About</a>
+          </li>
+         
+          <li class="navbar__btn">
+            <a href="Recorder/recorder.html" class="button" id="signup">Take the Diagnostic</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Diagnostic Section -->
+    <div class="hero" id="home">
+      <div class="hero__container">
+        <h1 class="hero__heading">Prioritize your <span>mental health</span></h1>
+        <p class="hero__description">Unlimited Possibilities</p>
+        <button class="main__btn"><a href="Recorder/recorder.html">Take Diagnostic</a></button>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="main" id="about">
+      <div class="main__container">
+        <div class="main__img--container">
+          <div class="main__img--card"><i class="fas fa-brain"></i></div>
+        </div>
+        <div class="main__content">
+          <h2>We Can Help</h2>
+          <p>Learn more about your mental state by taking our free diagnostic today</p>
+          <button class="main__btn"><a href="Recorder/recorder.html">Take diagnostic</a></button>
+          <div>
+           <p>Our diagnostic uses machine learning to analyze your voice and predict your mental state</p>
+            <!-- Temporary Link to  pages -->
+            <p style="font-size: 20px;">
+              <a href="Jokes/jokes.html">Jokes</a>
+            </p>
+            <p style="font-size: 20px;">
+              <a href="motivation-quote/index.html">Motivational Quote</a>
+            </p>
+            <p style="font-size: 20px;">
+              <a href="random-music/index.html">Random Music</a>
+            </p>
+            <p style="font-size: 20px;">
+              <a href="Ratings/rating.html">Ratings</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+    <!-- Footer Section -->
+    <div class="footer__container">
+      <div class="footer__links">
+        <div class="footer__link--wrapper">
+          
+         
+      </div>
+      <section class="social__media">
+        <div class="social__media--wrap">
+          <div class="footer__logo">
+            <a href="/" id="footer__logo">Mental Health First</a>
+          </div>
+          <div class="social__icons">
+            <a href="/" class="social__icon--link" target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="/" class="social__icon--link"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="/" class="social__icon--link"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="/" class="social__icon--link"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="/" class="social__icon--link"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </div>
+<!--I put this next stuff in. I need one text file for a username and it will be sending back a .wav file. -->
+    <script>
+function myFunction() {
+var text1= $('#text1').val();
+var text2= $('#text2').val();
+  $.ajax({
+              url: "/join",
+              type: "POST",
+              data: {text1:text1,
+              text2:text2}
+          }).done(function(response) {
+            var html= "<br><br><br><p> <b> RESULT : <b><p>";
+            response =response.result;
+                 $.each(response,function(key,val){
+                 console.log(val);
+                    html+="<p>"+val+"<p>"
+                });
+                html +="<br>";
+                $(".show-data").append(html);
+            });
+};
+  </script>
+
+<!-- This is the section that integrates with the machine learning program-->
+      <!--
+‹div class="login">
+  <hi›Predict CO2 Emission of Vehicles</h1›
+  <h3> Enter the following values to predict the CO2 emission from the vehicle</h3»
+   Main Input For Receiving Query to our ML
+  -->
+        <!--
+  «form action="(( url for ('predict')}}"method="post">
+    ‹input type="text" name-"enginesize" placeholder="Engine Size"
+    required="required"
+    ‹input type="text"
+    name="cylinders" placeholder="Cylinders"   required="required"
+    <input type="text" name="fuel" placeholder="Fuel" required-"required">
+    ‹button type="submit" class-"btn"›Predict</button>
+  </form>
+  <br>
+  <br>
+  {{ prediction text }}
+</div>
+-->
+    <script src="app.js"></script>
+  </body>
+</html>
