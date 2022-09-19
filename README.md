@@ -1,7 +1,2 @@
-### Hi there 👋
-
-<--
-This website is designed to help better the mental health of users by suggesting small changes they could make to their life
-It uses a Machine Learning Algorithm to predict the emotions of the User by their voice, it also can offer jokes, inspirational quotes, music suggestions 
-and allows users to rate their day and track it over time.
--->
+Hi, this is a personal portfoli that I've made to compile all my projects. I work mostly in python, but I am currently teaching myself web development. 
+Please check out my professional website and portfolio at <link>
